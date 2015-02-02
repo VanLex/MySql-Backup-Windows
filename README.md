@@ -1,5 +1,5 @@
 # MySql-Backup-Wndows
-Backup MySQL databases and gzip the output sql files. Using PowerShell script language for Windows.
+Backup MySQL databases and gzip the output sql files. Using PowerShell script language for Windows. Got the idea from [mysql-backup-windows.bat](https://gist.github.com/sindresorhus/869240).
 
 ### Requirements
 * [Powershell](http://support.microsoft.com/kb/968929)
