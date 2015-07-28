@@ -16,7 +16,11 @@ Download the [github archive](https://github.com/VanLex/MySql-Backup-Wndows/arch
 * If required change the value of the variable `$zip` to the path to *7z.exe* file.
 
 #### On my.cnf file:
-In section `[client]` change the user and password to your backup user. I recommend create user for backup with Limit to hosts Matching: *localhost* and Administrative Roles: BackupAdmin(Global Privileges: EVENT, LOCK TABLES, SELECT, SHOW DATABASES).
+In the `[client]` section, change the user and password to match those of your backup user. This user must be granted the following global privileges: `EVENT`, `LOCK TABLES`, `SELECT`, `SHOW DATABASES`, and `SHOW VIEW`. For example:
+
+```sql
+GRANT SELECT, SHOW DATABASES, LOCK TABLES, EVENT, SHOW VIEW ON *.* TO 'backup'@'localhost';
+```
 
 #### On Task Scheduler:
 Сreate a task to run the *mysqlbackup.ps1* script with the time necessary for you.
